@@ -47,8 +47,12 @@ const PopularProduct = ({props}) => {
     }
   }, [bannerSliderData]);
 
+  const {loading, error, data} = get_products();
   const controllerProps = {
     get_products,
+    loading,
+    error,
+    data,
   };
 
   /**

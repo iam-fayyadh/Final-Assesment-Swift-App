@@ -20,7 +20,7 @@ import {thumborProductList} from '@app/helpers/Thumbor';
 
 import styles from '@app/_modules/product_list/styles';
 
-const PopularProduct = ({get_products}) => {
+const PopularProduct = ({data, loading, error}) => {
   const scheme = useColorScheme();
   const [products, setProducts] = useState(null);
 
@@ -49,7 +49,6 @@ const PopularProduct = ({get_products}) => {
   const RenderItem = ({item}) => {
     return <Item item={item} />;
   };
-  const {loading, error, data} = get_products();
   useEffect(() => {
     setProducts(data && data.categoryList[0].products.items);
   }, [loading]);
